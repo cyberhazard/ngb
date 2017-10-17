@@ -2,9 +2,9 @@ const fs = require('fs');
 
 const makeBlock = (block) => {
   fs.writeFileSync(`./src/pug/blocks/_${block}.pug`, '')
-  fs.appendFileSync(`./src/pug/${indexFile}.pug`, `\n\tinclude blocks/_${block}.pug`)
+  fs.appendFileSync(`./src/pug/${indexFile}.pug`, `  include blocks/_${block}.pug\n`)
   fs.writeFileSync(`./src/stylus/blocks/_${block}.styl`, '')
-  fs.appendFileSync('./src/stylus/style.styl', `\n@import './blocks/_${block}.styl'`)
+  fs.appendFileSync('./src/stylus/style.styl', `@import './blocks/_${block}.styl'\n`)
 }
 
 const indexFile = process.argv[2];
