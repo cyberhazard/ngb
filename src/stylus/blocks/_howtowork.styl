@@ -66,8 +66,8 @@
     justify-content: space-between
     align-items: flex-start
   &__image
-    display: block
-    margin 0 auto
+    display: inline-block
+    height: 5.7rem
   &__garant
     text-align: center
     font-size 2rem
@@ -78,6 +78,92 @@
       color #60C3FE
       font-weight: 700
       font-size 3rem
-
+  &__element
+    text-align: center
 .howtowork__etaps button
   margin-top 4rem
+
+@media (max-width: 1024px)
+  .howtowork
+    padding-top: 9rem
+    &__title
+      font-size 3rem
+      margin-bottom 3.4rem
+    &__content
+      flex-wrap wrap
+      justify-content: center
+      align-items: center
+      margin-bottom 6.2rem
+    &__etaps
+      flex-basis 46%
+      &:first-child
+        margin-right 2rem
+      &:nth-child(3)
+        margin-top 5.6rem
+    &__number
+      font-size 4.6rem
+      margin-bottom 0.8rem
+    &__subtitle
+      font-size 2rem
+      margin-bottom 1.2rem
+    &__text
+      font-size 1.4rem
+      line-height 2.8rem
+    &__tag
+      font-size 2rem
+      margin-bottom 2.8rem
+    &__garant
+      font-size 1.4rem
+      line-height 2.2rem
+      & span
+        font-size 2.4 rem
+    &__image
+      height: 4rem
+      margin-bottom 1rem
+    &__footer
+      padding 2.8rem 8.4rem 3rem 8.4rem
+@media (max-width: 566px)
+  .howtowork
+    padding-top 5rem
+    &__title
+      font-size 2.4rem
+      margin-bottom 2rem
+    &__content
+      display block
+    &__number
+      font-size 4rem
+      margin-bottom 0.4rem
+    &__subtitle
+      font-size 1.8rem
+    &__text
+      font-size 1.2rem
+      line-height 2.4rem
+    &__tag
+      font-size 1.6rem
+      line-height 2.4rem
+    &__garant
+      font-size 1.2rem
+      line-height 1.9rem
+    &__etaps
+      margin-bottom 4.8rem
+      &:first-child
+        margin-right 0
+      &:nth-child(3)
+        margin-top 0rem
+    &__footer
+      padding 3rem 3.4rem 3.2rem 3.4rem
+    &__variants
+      flex-wrap wrap
+      justify-content: center
+    &__element
+      flex-basis 50%
+      margin-bottom 2rem
+    &__image
+      margin-bottom 0.2rem
+
+
+  .howtowork__etaps button
+    margin-top 2.4rem
+
+
+
