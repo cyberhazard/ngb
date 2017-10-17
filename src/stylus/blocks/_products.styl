@@ -1,0 +1,89 @@
+.products
+  padding 9rem 0
+  &__topheader
+    display none
+    font-family: 'Raleway'
+    font-weight: 800
+    font-size: 2.4rem
+    text-align right
+    margin-bottom 1rem
+    color black
+  &__wrapper
+    display flex
+    align-items: flex-start
+  &__svg
+    flex-shrink: 0
+    & svg
+      width 56.6rem
+      & .circle
+        cursor pointer
+        opacity 0
+        transition: .3s
+        &:hover
+          opacity 1
+  &__description
+    flex-grow: 1
+  &__header
+    font-family: 'Raleway'
+    font-weight: 800
+    font-size: 4.6rem
+    text-align right
+    margin-bottom 7rem
+    color black
+  &__content
+    padding-left 10rem
+    padding-right 5rem
+  &__title
+    font-family: 'Open Sans'
+    font-weight: 700
+    font-size: 3rem
+    line-height: 4rem
+    margin-bottom 1.8rem
+  &__text
+    font-family: 'Open Sans'
+    font-weight: 400
+    font-size: 1.6rem
+    line-height: 3rem
+
+@media (max-width: 1024px)
+  .products
+    &__svg
+      & svg
+        width 34rem
+    &__header
+      font-size: 3rem
+      margin-bottom 3.5rem
+    &__title
+      font-size: 2rem
+      line-height: 2.8rem
+    &__text
+      font-size: 1.4rem
+      line-height: 2.8rem
+    &__content
+      padding-left 1.5rem
+      padding-right 0
+
+@media (max-width: 566px)
+  .products
+    padding-top 5rem
+    padding-bottom 5rem
+    &__wrapper
+      display block
+    &__svg
+      margin-bottom 1rem
+      & svg
+        width 100%
+    &__header
+      display none
+    &__topheader
+      display block
+    &__title
+      font-size: 1.8rem
+      line-height: 2.6rem
+    &__text
+      font-size: 1.2rem
+      line-height: 2.4rem
+    &__content
+      padding-left 0
+      padding-right 0
+
