@@ -1,5 +1,80 @@
 .quotations
+  padding-top 6.3rem
+  padding-bottom 6.6rem
+  &__top
+    display flex
+    align-items: center
+    justify-content: space-between
+  &__logo
+    height 12.7rem
   &__title
     font-family: 'Raleway'
     font-size: 4.6rem
     color black
+  &__buttons
+    display flex
+  &__button
+    display flex
+    justify-content: center
+    align-items: center
+    height: 6.4rem
+    width: 6.4rem
+    background-color #D7F0FF
+    border-radius 50%
+    box-shadow: 0 6px 14px rgba(0,0,0,.1)
+    cursor pointer
+    transition: .3s
+    &:hover
+      background-color #C6E7FB
+      & ^[0]__circle
+        background-color #37ADF4
+    &:first-child
+      margin-right 2.5rem
+  &__circle
+    display flex
+    justify-content: center
+    align-items: center
+    width 73%
+    height 73%
+    background-color: #60C3FE
+    border-radius 50%
+    transition: .3s
+    & svg
+      height 40.62%
+  &__blocks
+    margin-top 3.3rem
+    padding-top 1.3rem
+    padding-bottom 1.3rem
+    box-shadow: 0 8px 24px rgba(0,0,0,.08)
+  &__slider
+    display flex
+  &__block
+    border-right: 1px solid #E8E8E8
+    padding 2.2rem 4.5rem
+    &:last-child
+      border none
+  &__label
+    font-family: 'Open Sans'
+    font-weight: 700
+    font-size: 1.8rem
+  &__index
+    font-family: 'Open Sans'
+    font-weight: 700
+    font-size: 1.4rem
+    color black
+    margin: 2.5rem 0
+    &_regular
+      font-weight: 400
+      margin 0 3rem 0 1.2rem
+    &_red
+      font-weight: 600
+      color #F62525
+    &_green
+      color #529A00
+  &__time
+    font-family: 'Open Sans'
+    font-size: 1.2rem
+    color #808080
+    & svg
+      height 1.3rem
+      vertical-align: middle
