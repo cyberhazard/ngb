@@ -103,8 +103,6 @@
     &__field
       font-size 1.4rem
       margin-bottom 1.4rem
-    &__question
-      padding-left 2rem
     &__input
       font-size 1.4rem
       padding 1.1rem 2.9rem 1.1rem 2.9rem
@@ -122,12 +120,54 @@
       margin-bottom 14.6rem
     &__pol
       font-size 1.2rem
+    &__elem
+      margin-bottom 2rem
 
 @media (max-width: 566px)
   .footer
     padding 3.8rem 0 3rem 0
     &__title
       font-size 2.4rem
-      margin-bottom 3.2rem
+      margin-bottom 3rem
+    &__subtitle
+      font-size 1.2rem
+    &__text
+      font-size 1.8rem
+      line-height 2.6rem
     &__content
       display: block
+      margin-bottom 9rem
+    &__grid
+      &:nth-child(1)
+        padding-top 0rem
+    &__elem
+      margin-bottom 1.4rem
+    &__item
+      margin-bottom 2.4rem
+      &:nth-child(3)
+        margin-bottom 4rem
+    &__grid
+      margin-bottom 5.2rem
+    &__field
+      font-size 1.2rem
+      padding-left 5.4rem
+    &__input
+      font-size 1.2rem
+      width 28.9rem
+    &__textarea
+      font-size 1.2rem
+      width 28.9rem
+      height 9.8rem
+    &__conf
+      flex-direction: column
+    &__pol
+      text-align: center
+      margin-bottom 2rem
+      &_bold
+        margin-bottom 1rem
+
+@media (max-width: 418px)
+  .footer__field
+    padding-left 2rem
+
+
