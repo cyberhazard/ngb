@@ -1,6 +1,6 @@
 .weare
   padding-top 6.6rem
-  margin-bottom 13rem
+  padding-bottom 13rem
   &__block
     display flex
     justify-content: space-between
@@ -39,3 +39,53 @@
     margin-bottom 1.8rem
     & span
       font-weight: 700
+
+@media (max-width: 1024px)
+  .weare
+    padding-top 4.6rem
+    padding-bottom 5rem
+    &__block
+      flex-direction: column
+      align-items: flex-start
+      margin-bottom 2.6rem
+      &:nth-child(2)
+        & .weare__about
+          order 2
+        & .weare__image_second
+          margin-left 0
+          margin-bottom 4.6rem
+    &__text
+      font-size 1.4rem
+      line-height 2.8rem
+      margin-bottom: 1.4rem;
+    &__image
+      margin-bottom 4.6rem
+      margin-right 0
+    &__img
+      width 95%
+
+@media (max-width: 566px)
+  .weare
+    padding-top 2rem
+    padding-bottom 2rem
+    &__block
+      margin-bottom 2.6rem
+      &:nth-child(2)
+        & .weare__image_second
+          margin-left 0
+          margin-bottom 2.4rem
+    &__text
+      font-size 1.2rem
+      line-height 2.4rem
+      margin-bottom: 0.4rem;
+    &__image
+      margin-bottom 2.4rem
+      &:before
+        top -2rem
+        left -2rem
+      &_second
+        &:before
+          bottom -2rem
+          right -2rem
+    &__img
+      width 100%
