@@ -51,6 +51,9 @@
   &__block
     border-right: 1px solid #E8E8E8
     padding 2.2rem 4.5rem
+    display flex
+    justify-content: center
+    align-items: center
     &:last-child
       border none
   &__label
@@ -79,3 +82,57 @@
       height 1.3rem
       vertical-align: middle
       margin-right 0.6rem
+
+@media (max-width: 1024px)
+  .quotations
+    padding-bottom 5.5rem
+    &__logo
+      height 8.6rem
+    &__title
+      font-size: 3rem
+    &__button
+      width 5.2rem
+      height 5.2rem
+    &__blocks
+      margin-top 2.8rem
+    &__block
+      padding 2rem 3.5rem
+    &__label
+      font-size: 1.6rem
+    &__index
+      font-size: 1.2rem
+      margin 1.5rem 0
+      white-space: nowrap;
+      &_regular
+        margin 0 1.2rem 0 .8rem
+    &__time
+      font-size: 1rem
+      & svg
+        height 1.1rem
+
+@media (max-width: 566px)
+  .quotations
+    padding-bottom 4.5rem
+    &__logo
+      height 5.9rem
+    &__title
+      font-size: 2.4rem
+    &__button
+      width 3.4rem
+      height 3.4rem
+    &__blocks
+      margin-top 2.6rem
+    &__block
+      padding 3rem
+    &__label
+      font-size: 1.6rem
+    &__index
+      font-size: 1.2rem
+      margin 1.5rem 0
+      white-space: nowrap;
+      &_regular
+        margin 0 1.2rem 0 .8rem
+    &__time
+      font-size: 1rem
+      & svg
+        height 1.1rem
