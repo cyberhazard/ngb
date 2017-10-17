@@ -38,8 +38,19 @@
     line-height 3rem
     color black
   &__footer
-    padding 4.4rem 12rem
+    padding 5.2rem 12rem 6rem 12rem
     border 0.4rem solid #60C3FE
+    position relative
+    &:before
+      content ''
+      position absolute
+      height: calc(100% + 4.4rem);
+      width: calc(100% - 4.4rem);
+      top 0
+      left 0
+      z-index -1
+      transform: translate(2rem, -2.6rem)
+      border 0.4rem solid #D1E3EF
   &__tag
     text-align center
     font-size 3rem
