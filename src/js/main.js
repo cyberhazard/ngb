@@ -4,7 +4,7 @@
 const fixedNavigationMenu = () => {
   const navigation = document.querySelector('.navigation');
   window.onscroll = () => {
-    if(window.pageYOffset > 100) {
+    if(window.pageYOffset > 10) {
       navigation.style.backgroundColor = 'black';
       navigation.style.paddingTop = '0';
     } else {
