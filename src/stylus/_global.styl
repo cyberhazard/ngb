@@ -36,6 +36,15 @@ html
   &:hover
     background-color: #37ADF4
 
+
+.mobile__hamburger
+  position: fixed;
+  top: 4rem;
+  right: 2rem;
+  z-index: 9;
+  cursor pointer
+  display none
+
 @media (max-width: 1600px)
   html
     font-size: 9px
@@ -57,6 +66,10 @@ html
     &_mini
       font-size: 1.2rem
       padding 1.2rem 2.6rem
+  .navigation
+    display none
+  .mobile__hamburger
+    display block
 
 @media (max-width: 767px)
   html
