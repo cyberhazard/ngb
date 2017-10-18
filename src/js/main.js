@@ -94,10 +94,27 @@ const productsBlock = () => {
       }
     })
   })
+};
+
+/**
+ * Скрипт блока с картой. Соответствие класса в SVG маркерах с data-tag блока .geography__item
+ *
+ */
+const geographyBlock = () => {
+  const markers = [...document.querySelector('.geography #markers').children];
+  const buttons = [...document.querySelectorAll('.geography__item')];
+  buttons.forEach(button => {
+    button.onclick = () => {
+      if (button.classList.contains('geography__item_selected')) return null
+      const tag = button.getAttribute('data-tag');
+      buttons.forEach(b => b.classList.remove('geography__item_selected'))
+      button.classList.add('geography__item_selected');
+      if (tag === 'pa') return markers.forEach(m => m.style.display = '');
+      markers.forEach(m => m.style.display = m.classList.contains(tag)? '' : 'none' );
+    }
+  })
 }
 
-fixedNavigationMenu();
-productsBlock();
 
 /**
  * мобильное меню
@@ -107,15 +124,18 @@ productsBlock();
  */
 new SmoothScroll('a[href*="#"]', { speed: 1500 })
 
- const mobileMenu = () => {
-   const hamburger = document.querySelector('.mobile__hamburger');
-   const close = document.querySelector('.mob-menu__close');
-   const menu = document.querySelector('.mob-menu');
-   const buttonScroll = document.querySelector('.button__scroll');
-   const items = [...document.querySelectorAll('.mob-menu__item'), buttonScroll ];
-   items.forEach( el => el.onclick = () => menu.style.bottom = '');
-   hamburger.onclick = () => menu.style.bottom = 0;
-   close.onclick = () => menu.style.bottom = '';
- }
- mobileMenu();
+const mobileMenu = () => {
+  const hamburger = document.querySelector('.mobile__hamburger');
+  const close = document.querySelector('.mob-menu__close');
+  const menu = document.querySelector('.mob-menu');
+  const buttonScroll = document.querySelector('.button__scroll');
+  const items = [...document.querySelectorAll('.mob-menu__item'), buttonScroll ];
+  items.forEach( el => el.onclick = () => menu.style.bottom = '');
+  hamburger.onclick = () => menu.style.bottom = 0;
+  close.onclick = () => menu.style.bottom = '';
+}
 
+fixedNavigationMenu();
+productsBlock();
+mobileMenu();
+geographyBlock();
