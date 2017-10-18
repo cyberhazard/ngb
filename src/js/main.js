@@ -133,9 +133,44 @@ const mobileMenu = () => {
   close.onclick = () => menu.style.bottom = '';
 }
 
+/**
+ * Блок с фото. Контент в /vendor/moments.json
+ *
+ */
+const momentsBlock = () => {
+  const buttonsBlock = document.querySelector('.moments__line');
+  const imageWrapper = document.querySelector('.moments__photowrapper img');
+  const year = document.querySelector('.moments__year');
+  const text = document.querySelector('.moments__text');
+  fetch('/vendor/moments.json').then(r => r.json()).then(content => {
+    buttonsBlock.innerHTML = content.map((el, i) => `
+    <div class="moments__item ${i === 0? 'moments__item_active' : ''}" data-tag="${i}">
+      <div class="moments__circle"></div>
+      <div class="moments__label">${el.label}</div>
+    </div>
+    `).join('');
+    imageWrapper.src = content[0].photo;
+    year.innerHTML = content[0].label;
+    text.innerHTML = content[0].text;
+    const buttons = [...document.querySelectorAll('.moments__item')];
+    buttons.forEach(button => {
+      button.onclick = (e) => {
+        if (e.currentTarget.classList.contains('moments__item_active')) return null;
+        buttons.forEach(b => b.classList.remove('moments__item_active'))
+        const tag = e.currentTarget.getAttribute('data-tag');
+        e.currentTarget.classList.add('moments__item_active')
+        imageWrapper.src = content[tag].photo;
+        year.innerHTML = content[tag].label;
+        text.innerHTML = content[tag].text;
+      }
+    })
+  })
+}
+
 fixedNavigationMenu();
 productsBlock();
 mobileMenu();
 geographyBlock();
 callBack();
+momentsBlock();
 
