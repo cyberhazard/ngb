@@ -76,7 +76,6 @@ var callBack = function(){
     modal.open();
   })
 }
-callBack();
 
 /**
  * Блок с выбором продуктов. Отображение активных продуктов при наведении.
@@ -115,15 +114,14 @@ const geographyBlock = () => {
   })
 }
 
-
-/**
- * мобильное меню
- */
 /**
  * Плавный скролл
  */
 new SmoothScroll('a[href*="#"]', { speed: 1500 })
 
+/**
+ * мобильное меню
+ */
 const mobileMenu = () => {
   const hamburger = document.querySelector('.mobile__hamburger');
   const close = document.querySelector('.mob-menu__close');
@@ -139,4 +137,5 @@ fixedNavigationMenu();
 productsBlock();
 mobileMenu();
 geographyBlock();
+callBack();
 
