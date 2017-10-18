@@ -1,0 +1,41 @@
+.mob-menu
+  position fixed
+  bottom 100%
+  left 0
+  display flex
+  flex-direction: column
+  width 100%
+  height 100vh
+  background-color rgba(0,0,0,0.95)
+  z-index: 20000
+  padding 3rem 1.2rem
+  transition: .5s
+  will-change: bottom
+  &__top
+    display flex
+    justify-content: space-between
+    align-items: center
+    flex-shrink: 0
+    flex-grow: 0
+  &__close
+    & svg
+      height 32px
+  &__menu
+    flex-grow: 1
+    padding-top 1rem
+    display flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+  &__item
+    font-family: 'Open Sans'
+    font-size: 1.8rem
+    color #fff
+    transition 0.3s
+    &:hover
+      color #60C3FE
+
+@media (max-width: 566px)
+  .mob-menu
+    &__item
+      font-size: 1.6rem
