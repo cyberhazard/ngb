@@ -54,6 +54,7 @@
     background-color #D7F0FF
     margin-right 2.5rem
     transition: .1s
+    flex-shrink: 0
     &:after
       content: ''
       display block
@@ -108,3 +109,87 @@
     font-size: 1.6rem
     color white
     line-height: 3rem
+
+@media (max-width: 1024px)
+  .moments
+    &__wrapper
+      padding-top 8rem
+      padding-bottom 7rem
+    &__header
+      font-size: 3rem
+    &__content
+      flex-direction: column
+    &__line
+      display flex
+      justify-content: space-between
+      margin-bottom 5rem
+      &:after
+        position absolute
+        top 1.64rem
+        left 0
+        width 99%
+        height 0.5rem
+        background-color #D7F0FF
+        z-index -1
+    &__item
+      margin-bottom 0
+      position relative
+    &__circle
+      margin-right 0
+    &__label
+      position absolute
+      bottom calc(100% + 1rem)
+      left 50%
+      font-size: 1.4rem
+      white-space: nowrap
+      transform: translateX(-50%)
+    &__cover
+      width 35rem
+    &__photowrapper
+      padding-top: 62px;
+      padding-left: 62px;
+      padding-right: 50px;
+    &__year
+      font-size: 2rem
+    &__text
+      font-size: 1.4rem
+      line-height: 2.8rem
+    &__left
+      width 75%
+      padding-right 0
+
+@media (max-width: 566px)
+  .moments
+    &__wrapper
+      padding-top 4rem
+      padding-bottom 4rem
+    &__header
+      font-size: 2.4rem
+    &__line
+      margin-bottom 3rem
+      &:after
+        top .9rem
+    &__right
+      flex-direction: column
+    &__label
+      font-size: .8rem
+    &__left
+      width 100%
+    &__year
+      font-size: 1.8rem
+    &__text
+      font-size: 1.2rem
+      line-height: 2.4rem
+    &__circle
+      width 2.4rem
+      height 2.4rem
+    &__cover
+      width 19rem
+    &__photowrapper
+      padding-top: 36px;
+      padding-left: 36px;
+      padding-right: 30px;
+    &__cards
+      margin-right 0
+    &__right
+      align-items: center
