@@ -128,9 +128,9 @@ const mobileMenu = () => {
   const menu = document.querySelector('.mob-menu');
   const buttonScroll = document.querySelector('.button__scroll');
   const items = [...document.querySelectorAll('.mob-menu__item'), buttonScroll ];
-  items.forEach( el => el.onclick = () => menu.style.bottom = '');
-  hamburger.onclick = () => menu.style.bottom = 0;
-  close.onclick = () => menu.style.bottom = '';
+  items.forEach( el => el.onclick = () => menu.style.transform = '');
+  hamburger.onclick = () => menu.style.transform = 'translateX(-100%)'
+  close.onclick = () => menu.style.transform = '';
 }
 
 /**
