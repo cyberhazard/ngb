@@ -59,7 +59,6 @@ var callBackWrap = () => {
         `
 };
 
-
 /**
  * Функция вызова модальных окон
  */
@@ -99,3 +98,18 @@ const productsBlock = () => {
 
 fixedNavigationMenu();
 productsBlock();
+
+/**
+ * мобильное меню
+ */
+
+ const mobileMenu = () => {
+   const hamburger = document.querySelector('.mobile__hamburger');
+   const close = document.querySelector('.mob-menu__close');
+   const menu = document.querySelector('.mob-menu');
+   const items = [...document.querySelectorAll('.mob-men__item')];
+   items.forEach(el=> el.onclick = () => menu.style.bottom = '');
+   hamburger.onclick = () => menu.style.bottom = 0;
+   close.onclick = () => menu.style.bottom = '';
+ }
+ mobileMenu();
