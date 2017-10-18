@@ -1,0 +1,87 @@
+.geography
+  font-family: 'Open Sans'
+  padding-top 10rem
+  padding-bottom 8.2rem
+  max-width: 130rem
+  margin 0 auto
+  &__header
+    font-weight: 700
+    font-size: 4.6rem
+    color black
+    margin-bottom 1.5rem
+  &__content
+    display flex
+  &__left
+    flex-grow: 1
+    padding-top 5rem
+  &__triangle svg
+    height 1.2rem
+    margin-right 2rem
+    display none
+  &__item
+    display flex
+    align-items: center
+    margin-bottom 3rem
+    cursor pointer
+    &:hover
+      & ^[0]__text
+        color black
+    &:nth-child(1):hover ^[0]__blobs
+      background-image: url('/images/pa.png')
+    &:nth-child(2):hover ^[0]__blob
+      background-image: url('/images/p1.png')
+    &:nth-child(3):hover ^[0]__blob
+      background-image: url('/images/p2.png')
+    &:nth-child(4):hover ^[0]__blob
+      background-image: url('/images/p3.png')
+    &:nth-child(5):hover ^[0]__blob
+      background-image: url('/images/p4.png')
+    &:nth-child(6):hover ^[0]__blob
+      background-image: url('/images/p5.png')
+    &:nth-child(7):hover ^[0]__blob
+      background-image: url('/images/p6.png')
+    &:nth-child(8):hover ^[0]__blob
+      background-image: url('/images/p7.png')
+    &_selected
+      & ^[0]__triangle svg
+        display block
+      & ^[0]__text
+        color black
+      &:nth-child(1) ^[0]__blobs
+        background-image: url('/images/pa.png')
+      &:nth-child(2) ^[0]__blob
+        background-image: url('/images/p1.png')
+      &:nth-child(3) ^[0]__blob
+        background-image: url('/images/p2.png')
+      &:nth-child(4) ^[0]__blob
+        background-image: url('/images/p3.png')
+      &:nth-child(5) ^[0]__blob
+        background-image: url('/images/p4.png')
+      &:nth-child(6) ^[0]__blob
+        background-image: url('/images/p5.png')
+      &:nth-child(7) ^[0]__blob
+        background-image: url('/images/p6.png')
+      &:nth-child(8) ^[0]__blob
+        background-image: url('/images/p7.png')
+
+  &__blob
+    width 2rem
+    height 3rem
+    background url('/images/blob.png') center center/cover no-repeat
+    margin-right 2.2rem
+    transition: .3s
+  &__blobs
+    width 2.3rem
+    height 2.7rem
+    background url('/images/blobs.png') center center/cover no-repeat
+    margin-right 2.2rem
+    transition: .3s
+  &__text
+    font-size: 1.8rem
+    color #AEAEAE
+    font-weight: 600
+    transition .3s
+  &__right
+    align-items: flex-start
+    & svg
+      width 100.5rem
