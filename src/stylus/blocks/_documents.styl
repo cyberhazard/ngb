@@ -38,7 +38,7 @@
       background-size: cover
       position: absolute
       left 0
-      top 0
+      top -6px
   &__list
     display flex
     flex-direction: column
@@ -54,6 +54,12 @@
     width 100%
     object-fit: contain
     transform: translate(13rem,4rem);
+
+@media (max-width: 1400px)
+  .documents
+    &__item
+      &:before
+        top -6px
 
 @media (max-width: 1024px)
   .documents
@@ -79,7 +85,6 @@
     &__img
       width: 112%;
       transform: translate(7rem,5rem);
-
 @media (max-width: 920px)
   .documents
     &__img
