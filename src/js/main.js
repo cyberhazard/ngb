@@ -192,7 +192,7 @@ const getQuotations = (interval) => {
   </svg>
   ${new Date().toLocaleString()}</div></span></div>`
 
-  fetch('http://royalarmy.ru:8100/api').then(r => r.json()).then(data => {
+  fetch('/api/indexes.php').then(r => r.json()).then(data => {
     const wrapper = document.querySelector('.quotations__slider');
     wrapper.innerHTML = data.map(makeBlock).join('');
     new Swiper('.quotations__blocks', {
