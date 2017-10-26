@@ -1,4 +1,28 @@
 /**
+ * Пост запрос формы обратной связи
+ */
+var sendMail = function sendMail() {
+  return fetch('/mail.php', {
+    method: 'POST',
+    body: new FormData(document.forms["footer__form"])
+  }).then(function (data) {
+    console.log('Request succeeded with JSON response', data);
+  }).catch(function (error) {
+    console.log('Request failed', error);
+  });
+};
+var footerForm = function(){
+  const submit = document.querySelector('.footer__submit')
+  const checkbox = document.querySelector('.confirm__label input')
+  submit.onclick = function(e){
+    e.preventDefault();
+    if(!checkbox.checked){
+      alertify.error("Вы не приняли соглашение об обработке персональных данных");
+    }
+  }
+}
+footerForm();
+/**
  * Закрепленное к верху меню навигации
  */
 const fixedNavigationMenu = () => {
