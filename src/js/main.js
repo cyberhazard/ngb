@@ -135,7 +135,7 @@ const productsBlock = () => {
  *
  */
 const geographyBlock = () => {
-  const markers = [...document.querySelector('.geography #markers').children];
+  const markers = [...document.querySelector('.geography #markers g')];
   const buttons = [...document.querySelectorAll('.geography__item')];
   buttons.forEach(button => {
     button.onmouseover = () => {
