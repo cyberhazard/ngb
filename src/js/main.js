@@ -1,12 +1,10 @@
 /**
  * Пост запрос формы обратной связи
  */
-var sendMail = function sendMail() {
+var sendMail = function sendMail(selector) {
   return fetch('/mail.php', {
     method: 'POST',
-    body: new FormData(document.forms["footer__form"])
-  }).then(function (data) {
-    alertify.success("Ваша заявка отправленна");
+    body: new FormData(document.querySelector(selector))
   }).catch(function (error) {
     alertify.error("Ошибка. Повторите отправку позже");
   });
@@ -17,16 +15,24 @@ var sendMail = function sendMail() {
 var footerForm = function(){
   const submit = document.querySelector('.footer__submit')
   const checkbox = document.querySelector('.confirm__label input')
-  submit.onclick = function(e){
+  document.querySelector(".footer__form").onsubmit = function(e){
     e.preventDefault();
     if(!checkbox.checked){
       alertify.error("Вы не приняли соглашение об обработке персональных данных");
     } else {
-      sendMail();
+      sendMail('.footer__form').then(_ => alertify.success("Ваша заявка отправленна"))
+
     }
   }
 }
 footerForm();
+
+const callBackFormSend = () => {
+  const form = document.querySelector('.call__form');
+  form.onsubmit = e => (e.preventDefault(), sendMail('.call__form').then(_ => alertify.success("Ваша заявка отправленна")))
+}
+
+
 /**
  * Закрепленное к верху меню навигации
  */
@@ -64,8 +70,11 @@ var modal = new tingle.modal({
     document.querySelector('body').style.paddingRight= window.innerWidth - document.body.clientWidth + 'px';
     document.querySelector('body').style.overflow= 'hidden';
     document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, .9)";
-    document.querySelector('.tingle-modal').style.zIndex="1000000";
+    document.querySelector('.tingle-modal').style.zIndex="4000";
     document.querySelector('.tingle-modal-box').style.background="none";
+  },
+  onOpen: function() {
+    callBackFormSend();
   },
   cssClass: ['custom-class-1', 'custom-class-2']
 });
@@ -87,7 +96,7 @@ var callBackWrap = () => {
                     <label class="call__field"> * Ваш телефон:</label>
                     <input class="call__input" type="tel" required name="phone" placeholder="+7 (999) 999-99-99" />
                   </div>
-                  <button class="button call__submit"> Записаться </button>
+                  <button class="button call__submit" type="submit"> Записаться </button>
                 </form>
               </div>
             </div>
