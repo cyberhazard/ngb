@@ -103,7 +103,7 @@ const geographyBlock = () => {
   const markers = [...document.querySelector('.geography #markers').children];
   const buttons = [...document.querySelectorAll('.geography__item')];
   buttons.forEach(button => {
-    button.onclick = () => {
+    button.onmouseover = () => {
       if (button.classList.contains('geography__item_selected')) return null
       const tag = button.getAttribute('data-tag');
       buttons.forEach(b => b.classList.remove('geography__item_selected'))
@@ -197,6 +197,11 @@ const getQuotations = (interval) => {
     wrapper.innerHTML = data.map(makeBlock).join('');
     new Swiper('.quotations__blocks', {
       slidesPerView: 4,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
       navigation: {
         prevEl: '.quotations__circle.left',
         nextEl: '.quotations__circle.right'
