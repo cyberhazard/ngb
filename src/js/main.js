@@ -219,7 +219,7 @@ const getQuotations = (interval) => {
       }
     })
   });
-  setTimeout(() => getQuotations(interval), interval)
+  // setTimeout(() => getQuotations(interval), interval)
 }
 
 fixedNavigationMenu();
