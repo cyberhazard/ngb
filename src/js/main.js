@@ -6,11 +6,14 @@ var sendMail = function sendMail() {
     method: 'POST',
     body: new FormData(document.forms["footer__form"])
   }).then(function (data) {
-    console.log('Request succeeded with JSON response', data);
+    alertify.success("Ваша заявка отправленна");
   }).catch(function (error) {
-    console.log('Request failed', error);
+    alertify.error("Ошибка. Повторите отправку позже");
   });
 };
+/**
+ * Отправка заявки футер
+ */
 var footerForm = function(){
   const submit = document.querySelector('.footer__submit')
   const checkbox = document.querySelector('.confirm__label input')
@@ -18,6 +21,8 @@ var footerForm = function(){
     e.preventDefault();
     if(!checkbox.checked){
       alertify.error("Вы не приняли соглашение об обработке персональных данных");
+    } else {
+      sendMail();
     }
   }
 }
