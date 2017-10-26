@@ -11,7 +11,17 @@ html(lang="ru")
     script(src="/vendor/inputmask.dependencyLib.min.js")
     script(src="/vendor/inputmask.min.js")
     <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch,Promise"></script>
+    //- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
+    <script src="/vendor/promise.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
     title НГБ
+    script.
+      if (!Array.from) {
+        Array.from = function (object) {
+            'use strict';
+            return [].slice.call(object);
+        };
+      }
   body
     #wrapper
       block content
