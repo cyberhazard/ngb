@@ -127,7 +127,7 @@ var callBack = function(){
     e.preventDefault();
     modal.setContent(callBackWrap());
     modal.open();
-    [...document.querySelectorAll('input[type="tel"]')].forEach(input => new Inputmask('+7 (999) 99-99-99').mask(input));
+    [...document.querySelectorAll('input[type="tel"]')].forEach(input => new Inputmask('+7 (999) 999-99-99').mask(input));
   })
 }
 
@@ -169,7 +169,7 @@ const productsBlock = () => {
  *
  */
 const geographyBlock = () => {
-  const markers = [...document.querySelector('.geography #markers g')];
+  const markers = [...document.querySelectorAll('.geography #markers g[class^="p"]')];
   const buttons = [...document.querySelectorAll('.geography__item')];
   buttons.forEach(button => {
     button.onmouseover = () => {
@@ -178,7 +178,8 @@ const geographyBlock = () => {
       buttons.forEach(b => b.classList.remove('geography__item_selected'))
       button.classList.add('geography__item_selected');
       if (tag === 'pa') return markers.forEach(m => m.style.display = '');
-      markers.forEach(m => m.style.display = m.classList.contains(tag)? '' : 'none' );
+      // markers.forEach(m => m.style.display = m.classList.contains(tag)? '' : 'none' );
+      markers.forEach(m => m.style.display = m.getAttribute('class').indexOf(tag) != -1? '' : 'none' );
     }
   })
 }
@@ -291,7 +292,7 @@ const getQuotations = (interval) => {
   // setTimeout(() => getQuotations(interval), interval)
 };
 
-[...document.querySelectorAll('input[type="tel"]')].forEach(input => new Inputmask('+7 (999) 99-99-99').mask(input))
+[...document.querySelectorAll('input[type="tel"]')].forEach(input => new Inputmask('+7 (999) 999-99-99').mask(input))
 
 fixedNavigationMenu();
 productsBlock();
