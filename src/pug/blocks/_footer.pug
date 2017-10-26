@@ -20,6 +20,11 @@ footer.footer#footer
           .footer__item
             label.footer__field &nbsp;&nbsp; Ваш вопрос?
             textarea.footer__textarea(type="text" placeholder="Что вас интересует?")
+          .footer__item.footer__personal
+            label.confirm__label
+              input(type="checkbox" value="1" name="k")
+              span
+            p Я принимаю <a id="politics">соглашение сайта</a> об обработке персональных данных
           button.button.footer__submit Отправить
   .g-wrapper
     .footer__conf

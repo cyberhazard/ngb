@@ -111,6 +111,16 @@ var showPolitics = function(){
   modal.setContent(politic);
   modal.open();
 }
+/**
+ * Вызов политики конф в футер форме
+ */
+var openFooterPolitics = function(){
+  const button = document.querySelector('#politics')
+  button.onclick = function(){
+    showPolitics();
+  }
+}
+openFooterPolitics();
 
 /**
  * Блок с выбором продуктов. Отображение активных продуктов при наведении.
