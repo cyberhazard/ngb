@@ -213,7 +213,7 @@ const getQuotations = (interval) => {
         676: {
           slidesPerView: 2
         },
-        566: {
+        360: {
           slidesPerView: 1
         }
       }
