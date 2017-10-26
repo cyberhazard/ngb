@@ -129,8 +129,8 @@ const mobileMenu = () => {
   const buttonScroll = document.querySelector('.button__scroll');
   const items = [...document.querySelectorAll('.mob-menu__item'), buttonScroll ];
   items.forEach( el => el.onclick = () => menu.style.transform = '');
-  hamburger.onclick = () => menu.style.transform = 'translateX(-100%)'
-  close.onclick = () => menu.style.transform = '';
+  hamburger.onclick = () => (menu.style.transform = 'translateX(-100%)', document.body.style.overflow='hidden')
+  close.onclick = () => (menu.style.transform = '', document.body.style.overflow='')
 }
 
 /**
