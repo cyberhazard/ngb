@@ -74,6 +74,7 @@ var callBack = function(){
     document.querySelector('.tingle-modal').style.zIndex="1000000";
     document.querySelector('.tingle-modal-box').style.background="none";
     modal.open();
+    [...document.querySelectorAll('input[type="tel"]')].forEach(input => new Inputmask('+7 (999) 99-99-99').mask(input));
   })
 }
 
@@ -218,9 +219,11 @@ const getQuotations = (interval) => {
         }
       }
     })
-  });
+  }).catch(console.log);
   // setTimeout(() => getQuotations(interval), interval)
-}
+};
+
+[...document.querySelectorAll('input[type="tel"]')].forEach(input => new Inputmask('+7 (999) 99-99-99').mask(input))
 
 fixedNavigationMenu();
 productsBlock();
