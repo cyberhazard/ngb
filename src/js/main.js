@@ -20,8 +20,8 @@ var footerForm = function(){
     if(!checkbox.checked){
       alertify.error("Вы не приняли соглашение об обработке персональных данных");
     } else {
-      sendMail('.footer__form').then(_ => alertify.success("Ваша заявка отправленна"))
-
+      sendMail('.footer__form').then(_ => (alertify.success("Ваша заявка отправленна"), document.querySelector(".footer__form").reset()))
+cx
     }
   }
 }
@@ -29,7 +29,7 @@ footerForm();
 
 const callBackFormSend = () => {
   const form = document.querySelector('.call__form');
-  form.onsubmit = e => (e.preventDefault(), sendMail('.call__form').then(_ => alertify.success("Ваша заявка отправленна")))
+  form.onsubmit = e => (e.preventDefault(), sendMail('.call__form').then(_ => (alertify.success("Ваша заявка отправленна"), form.reset(), modal.close())))
 }
 
 
