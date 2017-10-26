@@ -238,7 +238,7 @@ const momentsBlock = () => {
     text.innerHTML = content[0].text;
     const buttons = [...document.querySelectorAll('.moments__item')];
     buttons.forEach(button => {
-      button.onclick = (e) => {
+      button.onmouseover = (e) => {
         if (e.currentTarget.classList.contains('moments__item_active')) return null;
         buttons.forEach(b => b.classList.remove('moments__item_active'))
         const tag = e.currentTarget.getAttribute('data-tag');
