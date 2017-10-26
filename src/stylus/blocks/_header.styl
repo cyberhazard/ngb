@@ -1,6 +1,7 @@
 .header
   position relative
   overflow hidden
+  background url('/images/header_img.jpg') center center/cover no-repeat
   &__video
     width 100%
     height 70rem
@@ -68,6 +69,7 @@
 
 @media (max-width: 566px)
   .header
+    height: 47.6rem
     &__phoneblock
       display flex
       align-items: center
@@ -76,7 +78,7 @@
     &__content
       padding 0 1.6rem
     &__video
-      height 47.6rem
+      display none
     &__title
       font-size: 2.4rem
       margin-bottom 2.6rem
