@@ -31,6 +31,13 @@ var modal = new tingle.modal({
     document.querySelector('body').style.paddingRight= 0 + 'px';
     return true; // close the modal
   },
+  beforeOpen: function() {
+    document.querySelector('body').style.paddingRight= window.innerWidth - document.body.clientWidth + 'px';
+    document.querySelector('body').style.overflow= 'hidden';
+    document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, .9)";
+    document.querySelector('.tingle-modal').style.zIndex="1000000";
+    document.querySelector('.tingle-modal-box').style.background="none";
+  },
   cssClass: ['custom-class-1', 'custom-class-2']
 });
 
@@ -59,6 +66,33 @@ var callBackWrap = () => {
         `
 };
 
+const politic = `<div style="color: white; font-size: 2rem;">
+<h1>Политика конфиденциальности</h1>
+<p>Настоящий документ «Политика конфиденциальности» представляет собой правила использования [наименование владельца сайта] персональной информации Пользователя.</p>
+<p>Предоставляя свои персональные данные Пользователь даёт согласие на обработку, хранение и использование своих персональных данных на основании ФЗ № 152-ФЗ «О персональных данных» от 27.07.2006 г. в следующих целях:</p>
+<ul>
+  <li>Установления с Пользователем обратной связи, включая направление уведомлений, запросов, касающихся использования Сайта, оказания услуг, обработку запросов и заявок от Пользователя.</li>
+  <li>Осуществление клиентской поддержки</li>
+  <li>Получения Пользователем информации о маркетинговых событиях</li>
+  <li>Проведения аудита и прочих внутренних исследований с целью повышения качества предоставляемых услуг</li>
+</ul>
+<h2>Персональная информация</h2>
+<p>Под персональными данными подразумевается любая информация, предоставляемая пользователем самостоятельно, включая персональные данные пользователя, такие как:</p>
+<ul>
+<li>Фамилия, Имя, Отчество</li>
+<li>Контактный телефон</li>
+<li>Адрес электронной почты</li>
+</ul>
+А также данные, которые передаются в автоматическом режиме.
+<p>Персональные данные Пользователей хранятся исключительно на электронных носителях и обрабатываются с использованием автоматизированных систем, за исключением случаев, когда неавтоматизированная обработка персональных данных необходима в связи с исполнением требований законодательства.</p>
+<p>Компания обязуется не передавать полученные персональные данные третьим лицам, за исключением следующего случая:</p>
+<ul>
+<li>По запросам уполномоченных органов государственной власти РФ только по основаниям и в порядке, установленным законодательством РФ.</li>
+</ul>
+<p> Компания оставляет за собой право вносить изменения в одностороннем порядке в настоящие правила, при условии, что изменения не противоречат действующему законодательству РФ. Изменения условий настоящих правил вступают в силу после их публикации на Сайте.
+</p></div>
+`
+
 /**
  * Функция вызова модальных окон
  */
@@ -68,14 +102,14 @@ var callBack = function(){
   callBackButton.forEach((el) => el.onclick = function(e){
     e.preventDefault();
     modal.setContent(callBackWrap());
-    document.querySelector('body').style.paddingRight= window.innerWidth - document.body.clientWidth + 'px';
-    document.querySelector('body').style.overflow= 'hidden';
-    document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, .9)";
-    document.querySelector('.tingle-modal').style.zIndex="1000000";
-    document.querySelector('.tingle-modal-box').style.background="none";
     modal.open();
     [...document.querySelectorAll('input[type="tel"]')].forEach(input => new Inputmask('+7 (999) 99-99-99').mask(input));
   })
+}
+
+var showPolitics = function(){
+  modal.setContent(politic);
+  modal.open();
 }
 
 /**
