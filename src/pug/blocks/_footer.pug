@@ -9,17 +9,27 @@ footer.footer#footer
         .footer__elem
           .footer__subtitle Благодаря этом Мы заслужили:
           .footer__text Репутацию надежного партнера
+        .footer__elem
+          .footer__type
+            img.footer__svg(src="./images/phone-icon.svg")
+            a(href="tel:+749999999").footer__contact +7 (499) 999-99-99
+          .footer__type
+            img.footer__svg(src="./images/mail.svg")
+            a(href="mailto:").footer__contact test@mail
+          .footer__type
+            img.footer__svg(src="./images/pin.svg")
+            .footer__contact Адрес
       .footer__grid
         form.footer__form
           .footer__item
             label.footer__field * Ваше имя:
-            input.footer__input(type="text" required name="name" placeholder="Например, Антон")
+            input.footer__input(type="text" required name="user-name" placeholder="Например, Антон")
           .footer__item
             label.footer__field * Ваш телефон:
-            input.footer__input(type="tel" required name="phone" placeholder="+7 (999) 999-99-99")
+            input.footer__input(type="tel" required name="user-phone" placeholder="+7 (999) 999-99-99")
           .footer__item
             label.footer__field &nbsp;&nbsp; Ваш вопрос?
-            textarea.footer__textarea(type="text" name="text" placeholder="Что вас интересует?")
+            textarea.footer__textarea(type="text" name="user-text" placeholder="Что вас интересует?")
           .footer__item.footer__personal
             label.confirm__label
               input(type="checkbox" value="1" name="k")
