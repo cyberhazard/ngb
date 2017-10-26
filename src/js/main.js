@@ -90,11 +90,11 @@ var callBackWrap = () => {
                 <form class="call__form">
                   <div class="call__item">
                     <label class="call__field"> * Ваше имя:</label>
-                    <input class="call__input" type="text" required name="name" placeholder="Например, Антон" />
+                    <input class="call__input" type="text" required name="user-name" placeholder="Например, Антон" />
                   </div>
                   <div class="call__item">
                     <label class="call__field"> * Ваш телефон:</label>
-                    <input class="call__input" type="tel" required name="phone" placeholder="+7 (999) 999-99-99" />
+                    <input class="call__input" type="tel" required name="user-phone" placeholder="+7 (999) 999-99-99" />
                   </div>
                   <button class="button call__submit" type="submit"> Записаться </button>
                 </form>
