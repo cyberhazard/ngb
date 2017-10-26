@@ -38,13 +38,25 @@ html
     background-color: #37ADF4
 
 
-.mobile__hamburger
-  position: fixed;
-  top: 4rem;
-  right: 2rem;
-  z-index: 9;
-  cursor pointer
-  display none
+.mobile
+  &__hamburger
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 9;
+    cursor pointer
+    display none
+  &__text
+    font-family: 'Open Sans'
+    font-weight: 600
+    font-size: 1.4rem
+    color #7AC2FB
+    margin-right 1rem
+  &__icon
+    width 3.2rem
+    height 2.3rem
+    & rect
+      fill #7AC2FB
 
 @media (max-width: 1600px)
   html
@@ -70,11 +82,14 @@ html
   .navigation
     display none
   .mobile__hamburger
-    display block
+    display flex
 
 @media (max-width: 767px)
   html
     font-size: 9px
+  .mobile
+    &__text
+      display none
 
 @media (max-width: 675px)
   html
