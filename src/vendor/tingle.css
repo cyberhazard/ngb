@@ -223,9 +223,7 @@
     top: 0;
   }
 
-  .tingle-modal--overflow {
-    height: calc(100% - 60px);
-  }
+
 
   .tingle-modal-box__footer .tingle-btn {
     display: block;
