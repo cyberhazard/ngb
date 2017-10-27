@@ -201,7 +201,10 @@ const geographyBlock = () => {
 /**
  * Плавный скролл
  */
-new SmoothScroll('a[href*="#"]', { speed: 1500 })
+new SmoothScroll('a[href*="#"]', { speed: 1500, after: function() {
+  document.querySelector('body').style.overflow= '';
+  document.querySelector('body').style.paddingRight= 0 + 'px';
+} })
 
 /**
  * мобильное меню
