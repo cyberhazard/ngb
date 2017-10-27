@@ -62,7 +62,7 @@ var modal = new tingle.modal({
   closeMethods: ['overlay', 'button', 'escape'],
   closeLabel: "Close",
   beforeClose: function() {
-    document.querySelector('body').style.overflow= 'auto';
+    document.querySelector('body').style.overflow= '';
     document.querySelector('body').style.paddingRight= 0 + 'px';
     return true; // close the modal
   },
