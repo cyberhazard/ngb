@@ -161,6 +161,18 @@ var openFooterPolitics = function(){
 openFooterPolitics();
 
 /**
+ * Вызов политики в самом низу страницы
+ */
+
+var openPolitics = function(){
+  const button = document.querySelector('.footer__pol')
+  button.onclick = function(){
+    showPolitics();
+  }
+}
+openPolitics();
+
+/**
  * Блок с выбором продуктов. Отображение активных продуктов при наведении.
  * Весь контент находится в папке vendor, файл products.json
  */
