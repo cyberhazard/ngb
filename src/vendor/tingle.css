@@ -6,7 +6,13 @@
   box-sizing: border-box;
 }
 
+.tingle-modal ul {
+  margin: 2rem 0 2rem 4rem;
+}
+
+
 .tingle-modal {
+  font-family: Open Sans;
   position: fixed;
   top: 0;
   right: 0;
