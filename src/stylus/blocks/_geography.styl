@@ -6,6 +6,8 @@
   padding-right 2rem
   max-width: 130rem
   margin 0 auto
+  & #markers g[class^="p"]
+    transition: .3s
   &__header
     font-weight: 700
     font-size: 4.6rem
@@ -16,17 +18,20 @@
   &__left
     flex-grow: 1
     padding-top 5rem
+    overflow: hidden
   &__triangle svg
     height 1.2rem
     width 1rem
     margin-right 2rem
-    display none
+    display block
   &__item
     display flex
     align-items: center
     margin-bottom 3rem
     cursor pointer
+    animation geo-1 .5s forwards
     &:hover
+      animation geo-2 .5s forwards
       & ^[0]__text
         color black
     &:nth-child(1):hover ^[0]__blobs
@@ -46,6 +51,7 @@
     &:nth-child(8):hover ^[0]__blob
       background-image: url('/images/p7.png')
     &_selected
+      animation geo-2 .5s forwards
       & ^[0]__triangle svg
         display block
       & ^[0]__text
@@ -128,3 +134,6 @@
       display none
     &__right svg
       max-width: 100%
+
+@keyframes geo-1 { from { transform: translateX(0) } to { transform: translateX(-11%) } }
+@keyframes geo-2 { from { transform: translateX(-11%) } to { transform: translateX(0) } }

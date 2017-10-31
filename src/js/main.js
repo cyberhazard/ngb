@@ -161,6 +161,18 @@ var openFooterPolitics = function(){
 openFooterPolitics();
 
 /**
+ * Вызов политики в самом низу страницы
+ */
+
+var openPolitics = function(){
+  const button = document.querySelector('.footer__pol')
+  button.onclick = function(){
+    showPolitics();
+  }
+}
+openPolitics();
+
+/**
  * Блок с выбором продуктов. Отображение активных продуктов при наведении.
  * Весь контент находится в папке vendor, файл products.json
  */
@@ -191,9 +203,9 @@ const geographyBlock = () => {
       const tag = button.getAttribute('data-tag');
       buttons.forEach(b => b.classList.remove('geography__item_selected'))
       button.classList.add('geography__item_selected');
-      if (tag === 'pa') return markers.forEach(m => m.style.display = '');
+      if (tag === 'pa') return markers.forEach(m => m.style.opacity = '1');
       // markers.forEach(m => m.style.display = m.classList.contains(tag)? '' : 'none' );
-      markers.forEach(m => m.style.display = m.getAttribute('class').indexOf(tag) != -1? '' : 'none' );
+      markers.forEach(m => m.style.opacity = m.getAttribute('class').indexOf(tag) != -1? '' : '0' );
     }
   })
 }

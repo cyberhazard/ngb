@@ -39,7 +39,9 @@ html
     padding: 1.4rem 3.4rem
   &:hover
     background-color: #37ADF4
-
+.alertify,
+.alertify-log
+  font-size 1.6rem
 
 .mobile
   &__hamburger
@@ -87,12 +89,19 @@ html
   .mobile__hamburger
     display flex
 
+  .alertify,
+  .alertify-log
+    font-size 1.4rem
+
 @media (max-width: 767px)
   html
     font-size: 9px
   .mobile
     &__text
       display none
+  .alertify,
+  .alertify-log
+    font-size 1.2rem
 
 @media (max-width: 675px)
   html
