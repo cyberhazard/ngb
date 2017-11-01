@@ -1,3 +1,16 @@
+
+/**
+ * Замена бекграунда для Safari
+ */
+var changeBackgroundSafari = function(){
+ const header = document.querySelector('.header');
+ const video = document.querySelector('.header__video')
+ if(is.safari()){
+  header.removeChild(video)
+  header.classList.toggle('header__safari')
+ }
+}
+changeBackgroundSafari();
 /**
  * Пост запрос формы обратной связи
  */
@@ -21,15 +34,27 @@ var footerForm = function(){
       alertify.error("Вы не приняли соглашение об обработке персональных данных");
     } else {
       sendMail('.footer__form').then(_ => (alertify.success("Ваша заявка отправленна"), document.querySelector(".footer__form").reset()))
-cx
     }
   }
 }
 footerForm();
 
+
+/**
+ * отправка модалки
+ */
 const callBackFormSend = () => {
+  const submit = document.querySelector('call__submit')
+  const checkbox = document.querySelector('#call-input')
   const form = document.querySelector('.call__form');
-  form.onsubmit = e => (e.preventDefault(), sendMail('.call__form').then(_ => (alertify.success("Ваша заявка отправленна"), form.reset(), modal.close())))
+  document.querySelector(".call__form").onsubmit = function(e){
+    e.preventDefault();
+    if(!checkbox.checked){
+      alertify.error("Вы не приняли соглашение об обработке персональных данных");
+    } else {
+      sendMail('.call__form').then(_ => (alertify.success("Ваша заявка отправленна"), document.querySelector(".call__form").reset(), modal.close()))
+    }
+  }
 }
 
 
@@ -95,6 +120,11 @@ var callBackWrap = () => {
                   <div class="call__item">
                     <label class="call__field"> * Ваш телефон:</label>
                     <input class="call__input" type="tel" required name="user-phone" placeholder="+7 (999) 999-99-99" />
+                  </div>
+                  <div class="footer__item call__item footer__personal">&nbsp; &nbsp; &nbsp; &nbsp;
+                    <label class="confirm__label">
+                        <input type="checkbox" id="call-input" /><span></span></label>
+                    <p>Я принимаю соглашение сайтаоб обработке персональных данных</p>
                   </div>
                   <button class="button call__submit" type="submit"> Записаться </button>
                 </form>
